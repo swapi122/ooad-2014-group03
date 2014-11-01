@@ -1,4 +1,4 @@
-package org.eclipse.swt;
+package presentation;
 
 import java.awt.EventQueue;
 
@@ -22,7 +22,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 
-public class speakingmask implements ActionListener {
+public class listenmask implements ActionListener {
 
 	private static JFrame frame;
 	JButton btnclose;
@@ -33,7 +33,7 @@ public class speakingmask implements ActionListener {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					speakingmask window = new speakingmask();
+					listenmask window = new listenmask();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -45,7 +45,7 @@ public class speakingmask implements ActionListener {
 	/**
 	 * Create the application.
 	 */
-	public speakingmask() {
+	public listenmask() {
 		initialize();
 		this.frame.setVisible(true);
 		}
@@ -118,7 +118,7 @@ public class speakingmask implements ActionListener {
 			System.out.println("mask --> btnclose_Click");
 			//openfilelisten ope = new openfilelisten();
 			//vclfillex vocabulary_fill = new vclfillex();
-			speakingmask.frame.setVisible(false);
+			listenmask.frame.setVisible(false);
 			//readingmenu mnulis = new readingmenu();
 		}
 		
