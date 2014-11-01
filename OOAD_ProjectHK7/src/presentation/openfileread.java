@@ -1,4 +1,4 @@
-package org.eclipse.swt;
+package presentation;
 
 import java.awt.EventQueue;
 
@@ -25,7 +25,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.border.LineBorder;
 
-public class openfilewriting implements ActionListener {
+public class openfileread implements ActionListener {
 
 	private static JFrame frame;
 	JButton btnCancel;
@@ -38,7 +38,7 @@ public class openfilewriting implements ActionListener {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					openfilewriting window = new openfilewriting();
+					openfileread window = new openfileread();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -50,7 +50,7 @@ public class openfilewriting implements ActionListener {
 	/**
 	 * Create the application.
 	 */
-	public openfilewriting() {
+	public openfileread() {
 		initialize();
 		this.frame.setVisible(true);
 	}
@@ -119,8 +119,8 @@ public class openfilewriting implements ActionListener {
 		if(btn==btnCancel)
 		{
 			System.out.println("openfile --> btncncel_Click");
-			openfilewriting.frame.setVisible(false);
-			//writingmenu write = new writingmenu();
+			openfileread.frame.setVisible(false);
+			//readingmenu read = new readingmenu();
 			
 		}
 		else if(btn==btninputfile){

@@ -1,4 +1,4 @@
-package org.eclipse.swt;
+package presentation;
 
 import java.awt.EventQueue;
 
