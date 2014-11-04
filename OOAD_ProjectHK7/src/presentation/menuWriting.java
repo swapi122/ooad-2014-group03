@@ -22,7 +22,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-public class writingmenu implements ActionListener {
+public class menuWriting implements ActionListener {
 
 	private static JDialog frame;
 	JButton btnOpenfile;
@@ -35,7 +35,7 @@ public class writingmenu implements ActionListener {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					writingmenu window = new writingmenu();
+					menuWriting window = new menuWriting();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -47,7 +47,7 @@ public class writingmenu implements ActionListener {
 	/**
 	 * Create the application.
 	 */
-	public writingmenu() {
+	public menuWriting() {
 		initialize();
 		this.frame.setVisible(true);
 	}
@@ -152,18 +152,18 @@ public class writingmenu implements ActionListener {
 		{
 			System.out.println("writing --> btnopenfile_Click");
 			
-			openfilewriting ope = new openfilewriting();
+			openFileWriting ope = new openFileWriting();
 			//vclfillex vocabulary_fill = new vclfillex();
 		}
 		else if(btn==btnFinal){
 			System.out.println("writing --> btnfinal_Click");
 			
-			writingmask lis = new writingmask();
+			maskWriting lis = new maskWriting();
 			//vcllistenex vocabulary_listen = new vcllistenex();
 		}
 		else if(btn==btnHome){
 			System.out.println("writing --> btnHome_Click");
-			writingmenu.frame.setVisible(false);
+			menuWriting.frame.setVisible(false);
 			menu home = new menu();
 			//vcllistenex vocabulary_listen = new vcllistenex();
 		}

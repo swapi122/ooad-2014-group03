@@ -25,7 +25,7 @@ import javax.swing.ImageIcon;
 
 
 
-public class speakingmenu implements ActionListener {
+public class menuSpeaking implements ActionListener {
 
 	private static JDialog frame;
 	
@@ -41,7 +41,7 @@ public class speakingmenu implements ActionListener {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					speakingmenu window = new speakingmenu();
+					menuSpeaking window = new menuSpeaking();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -53,7 +53,7 @@ public class speakingmenu implements ActionListener {
 	/**
 	 * Create the application.
 	 */
-	public speakingmenu() {
+	public menuSpeaking() {
 		initialize();
 		this.frame.setVisible(true);
 	}
@@ -149,7 +149,7 @@ public class speakingmenu implements ActionListener {
 		if(btn==btnFinal){
 			System.out.println("speakingmenu --> btnFinal_Click");
 			//speakingmenu.frame.setVisible(false);
-			speakingmask mask = new speakingmask();
+			maskSpeaking mask = new maskSpeaking();
 			
 		}
 		if(btn==btnSkip){
@@ -161,7 +161,7 @@ public class speakingmenu implements ActionListener {
 		if(btn==btnOpenFile){
 			System.out.println("speakingmenu --> btnOpenfile_Click");
 			//speakingmenu.frame.setVisible(true);
-			openfilespeak open = new openfilespeak();
+			openFileSpeak open = new openFileSpeak();
 			//listenmask listExerciseListening = new listenmask();
 			
 		}
@@ -173,7 +173,7 @@ public class speakingmenu implements ActionListener {
 		}
 		if(btn==btnHome){
 			System.out.println("speakingmenu --> btnHome_Click");
-			speakingmenu.frame.setVisible(false);
+			menuSpeaking.frame.setVisible(false);
 			menu home = new menu();
 			//listenmask listExerciseListening = new listenmask();
 			

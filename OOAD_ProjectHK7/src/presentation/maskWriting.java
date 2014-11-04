@@ -22,7 +22,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 
-public class readingmask implements ActionListener {
+public class maskWriting implements ActionListener {
 
 	private static JFrame frame;
 	JButton btnclose;
@@ -33,7 +33,7 @@ public class readingmask implements ActionListener {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					readingmask window = new readingmask();
+					maskWriting window = new maskWriting();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -45,7 +45,7 @@ public class readingmask implements ActionListener {
 	/**
 	 * Create the application.
 	 */
-	public readingmask() {
+	public maskWriting() {
 		initialize();
 		this.frame.setVisible(true);
 		}
@@ -118,7 +118,7 @@ public class readingmask implements ActionListener {
 			System.out.println("mask --> btnclose_Click");
 			//openfilelisten ope = new openfilelisten();
 			//vclfillex vocabulary_fill = new vclfillex();
-			readingmask.frame.setVisible(false);
+			maskWriting.frame.setVisible(false);
 			//readingmenu mnulis = new readingmenu();
 		}
 		

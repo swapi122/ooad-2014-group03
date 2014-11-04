@@ -25,7 +25,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.border.LineBorder;
 
-public class openfileread implements ActionListener {
+public class openFileRead implements ActionListener {
 
 	private static JFrame frame;
 	JButton btnCancel;
@@ -38,7 +38,7 @@ public class openfileread implements ActionListener {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					openfileread window = new openfileread();
+					openFileRead window = new openFileRead();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -50,7 +50,7 @@ public class openfileread implements ActionListener {
 	/**
 	 * Create the application.
 	 */
-	public openfileread() {
+	public openFileRead() {
 		initialize();
 		this.frame.setVisible(true);
 	}
@@ -119,7 +119,7 @@ public class openfileread implements ActionListener {
 		if(btn==btnCancel)
 		{
 			System.out.println("openfile --> btncncel_Click");
-			openfileread.frame.setVisible(false);
+			openFileRead.frame.setVisible(false);
 			//readingmenu read = new readingmenu();
 			
 		}
