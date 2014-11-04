@@ -149,28 +149,28 @@ public class menu implements ActionListener {
 		if(btn==btnListening){
 			System.out.println("Home --> Listening_Click");
 			menu.frame.setVisible(false);
-			menulistening listExerciseListening = new menulistening();
+			menuListening listExerciseListening = new menuListening();
 			
 		}
 		else if(btn==btnReading){
 			System.out.println("Home --> reading_Click");
 			menu.frame.setVisible(false);
-			readingmenu reading = new readingmenu();
+			menuReading reading = new menuReading();
 		}
 		else if(btn==btnSpeaking) {
 			System.out.println("Home --> speaking_Click");
 			menu.frame.setVisible(false);
-			speakingmenu speaking = new speakingmenu();
+			menuSpeaking speaking = new menuSpeaking();
 		}
 		else if(btn==btnVocabulary){
 			System.out.println("Home --> vocabulary_Click");
 			menu.frame.setVisible(false);
-			vocabularymenu vocabu =new vocabularymenu();
+			menuVocabulary vocabu =new menuVocabulary();
 		}
 		else if(btn==btnWriting){
 			System.out.println("Home --> writing_Click");
 			menu.frame.setVisible(false);
-			writingmenu wrinting =new writingmenu();
+			menuWriting wrinting =new menuWriting();
 		}
 		else if(btn==btnHelp){
 			System.out.println("Home --> help_Click");

@@ -22,7 +22,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-public class readingmenu implements ActionListener {
+public class menuReading implements ActionListener {
 
 	private static JDialog frame;
 	JButton btnopenfile;
@@ -36,7 +36,7 @@ public class readingmenu implements ActionListener {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					readingmenu window = new readingmenu();
+					menuReading window = new menuReading();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -48,7 +48,7 @@ public class readingmenu implements ActionListener {
 	/**
 	 * Create the application.
 	 */
-	public readingmenu() {
+	public menuReading() {
 		initialize();	
 		this.frame.setVisible(true);
 	}
@@ -82,6 +82,7 @@ public class readingmenu implements ActionListener {
 		panel_1.setLayout(null);
 		
 		TextArea textArea = new TextArea();
+		textArea.setEnabled(false);
 		textArea.setBounds(10, 10, 302, 308);
 		panel_1.add(textArea);
 		
@@ -126,15 +127,15 @@ public class readingmenu implements ActionListener {
 		JButton btn = (JButton)e.getSource();
 		if(btn==btnopenfile){
 			System.out.println("Reading --> btnOpenfile_Click");
-			openfileread open = new openfileread();
+			openFileRead open = new openFileRead();
 		}
 		else if(btn==btnFinal){
 			System.out.println("Listening --> btnFinal_Click");
-			readingmask mask = new readingmask();
+			maskReading mask = new maskReading();
 		}
 		else if(btn==btnHome){
 			System.out.println("Listening --> btnHome_Click");
-			readingmenu.frame.setVisible(false);
+			menuReading.frame.setVisible(false);
 			menu mask = new menu();
 		}
 	}

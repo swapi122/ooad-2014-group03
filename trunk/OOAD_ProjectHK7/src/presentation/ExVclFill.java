@@ -23,7 +23,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-public class vclfillex  implements ActionListener{
+public class ExVclFill  implements ActionListener{
 
 	private static JFrame frame;
 	JButton btnFinal;
@@ -37,7 +37,7 @@ public class vclfillex  implements ActionListener{
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					vclfillex window = new vclfillex();
+					ExVclFill window = new ExVclFill();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -49,7 +49,7 @@ public class vclfillex  implements ActionListener{
 	/**
 	 * Create the application.
 	 */
-	public vclfillex() {
+	public ExVclFill() {
 		initialize();
 		this.frame.setVisible(true);
 	}
@@ -157,8 +157,8 @@ public class vclfillex  implements ActionListener{
 		}
 		else if(btn==btnHome){
 			System.out.println("exercise fill --> btHome_Click");
-			vclfillex.frame.setVisible(false);
-			vocabularymenu vcl = new vocabularymenu();
+			ExVclFill.frame.setVisible(false);
+			menuVocabulary vcl = new menuVocabulary();
 		}
 	}
 }

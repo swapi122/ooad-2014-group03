@@ -25,7 +25,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.border.LineBorder;
 
-public class openfilelisten implements ActionListener {
+public class openFileWriting implements ActionListener {
 
 	private static JFrame frame;
 	JButton btnCancel;
@@ -38,7 +38,7 @@ public class openfilelisten implements ActionListener {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					openfilelisten window = new openfilelisten();
+					openFileWriting window = new openFileWriting();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -50,7 +50,7 @@ public class openfilelisten implements ActionListener {
 	/**
 	 * Create the application.
 	 */
-	public openfilelisten() {
+	public openFileWriting() {
 		initialize();
 		this.frame.setVisible(true);
 	}
@@ -119,7 +119,8 @@ public class openfilelisten implements ActionListener {
 		if(btn==btnCancel)
 		{
 			System.out.println("openfile --> btncncel_Click");
-			openfilelisten.frame.setVisible(false);
+			openFileWriting.frame.setVisible(false);
+			//writingmenu write = new writingmenu();
 			
 		}
 		else if(btn==btninputfile){

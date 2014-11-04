@@ -25,7 +25,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.border.LineBorder;
 
-public class openfilespeak implements ActionListener {
+public class openFileListen implements ActionListener {
 
 	private static JFrame frame;
 	JButton btnCancel;
@@ -38,7 +38,7 @@ public class openfilespeak implements ActionListener {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					openfilespeak window = new openfilespeak();
+					openFileListen window = new openFileListen();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -50,7 +50,7 @@ public class openfilespeak implements ActionListener {
 	/**
 	 * Create the application.
 	 */
-	public openfilespeak() {
+	public openFileListen() {
 		initialize();
 		this.frame.setVisible(true);
 	}
@@ -119,8 +119,7 @@ public class openfilespeak implements ActionListener {
 		if(btn==btnCancel)
 		{
 			System.out.println("openfile --> btncncel_Click");
-			openfilespeak.frame.setVisible(false);
-			//speakingmenu read = new speakingmenu();
+			openFileListen.frame.setVisible(false);
 			
 		}
 		else if(btn==btninputfile){

@@ -30,7 +30,7 @@ import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class menulistening implements ActionListener {
+public class menuListening implements ActionListener {
 
 	private static JDialog frame;
 	
@@ -45,7 +45,7 @@ public class menulistening implements ActionListener {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					menulistening window = new menulistening();
+					menuListening window = new menuListening();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -57,7 +57,7 @@ public class menulistening implements ActionListener {
 	/**
 	 * Create the application.
 	 */
-	public menulistening() {
+	public menuListening() {
 		initialize();
 		this.frame.setVisible(true);
 	}
@@ -144,18 +144,18 @@ public class menulistening implements ActionListener {
 		if(btn==btnFinal){
 			System.out.println("menu_listening --> btnFinal_Click");
 			//menulistening.frame.setVisible(false);
-			listenmask mask = new listenmask();
+			maskListening mask = new maskListening();
 			
 		}
 		else if(btn==btnHome){
 			System.out.println("menu_listening --> btnhome_Click");
-			menulistening.frame.setVisible(false);
+			menuListening.frame.setVisible(false);
 			menu home = new menu();
 		}
 		else if(btn==btnopenfile) {
 			System.out.println("menu_listening --> btnopenfile_Click");
 			//menulistening.frame.setVisible(false);
-			openfilelisten open = new openfilelisten();
+			openFileListen open = new openFileListen();
 			//ListExerciseSpeaking listExerciseSpeaking = new ListExerciseSpeaking();
 		}
 		else if(btn==btnlistien) {

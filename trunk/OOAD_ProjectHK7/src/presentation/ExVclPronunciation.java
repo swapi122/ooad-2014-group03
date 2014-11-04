@@ -21,7 +21,7 @@ import javax.swing.border.LineBorder;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
-public class vclpronunciationex implements ActionListener {
+public class ExVclPronunciation implements ActionListener {
 
 	private static JFrame frame;
 	private JTextField txtAnswer;
@@ -35,7 +35,7 @@ public class vclpronunciationex implements ActionListener {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					vclpronunciationex window = new vclpronunciationex();
+					ExVclPronunciation window = new ExVclPronunciation();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -47,7 +47,7 @@ public class vclpronunciationex implements ActionListener {
 	/**
 	 * Create the application.
 	 */
-	public vclpronunciationex() {
+	public ExVclPronunciation() {
 		initialize();
 		this.frame.setVisible(true);
 	}
@@ -174,7 +174,7 @@ public class vclpronunciationex implements ActionListener {
 		if(btn==btnFinal)
 		{
 			System.out.println("ExerciseVocabulary_pronun --> btnFinal_Click");
-			vclpronunmask mask = new vclpronunmask();
+			maskVclPronun mask = new maskVclPronun();
 		}
 		else if(btn == btnOpenfile){
 			System.out.println("ExerciseVocabulary_Pronun --> btnOpenFile_Click");
@@ -182,8 +182,8 @@ public class vclpronunciationex implements ActionListener {
 		}
 		else if(btn == btnHome){
 			System.out.println("ExerciseVocabulary_Pronun --> btnOpenFile_Click");
-			vclpronunciationex.frame.setVisible(false);
-			vocabularymenu vcl = new vocabularymenu();
+			ExVclPronunciation.frame.setVisible(false);
+			menuVocabulary vcl = new menuVocabulary();
 			//Vocabulary vocabulary = new Vocabulary();
 		}
 

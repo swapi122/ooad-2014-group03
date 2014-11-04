@@ -25,7 +25,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 
-public class vcllistenex implements ActionListener {
+public class ExVclListen implements ActionListener {
 
 	private static JFrame frame;
 	JButton btnOpenfile;
@@ -39,7 +39,7 @@ public class vcllistenex implements ActionListener {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					vcllistenex window = new vcllistenex();
+					ExVclListen window = new ExVclListen();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -51,7 +51,7 @@ public class vcllistenex implements ActionListener {
 	/**
 	 * Create the application.
 	 */
-	public vcllistenex() {
+	public ExVclListen() {
 		initialize();
 		this.frame.setVisible(true);
 	}
@@ -172,8 +172,8 @@ public class vcllistenex implements ActionListener {
 		}
 		else if(btn == btnHome){
 			System.out.println("ExerciseVocabulary_listen --> btnHome_Click");
-			vcllistenex.frame.setVisible(false);
-			vocabularymenu vcl = new vocabularymenu();
+			ExVclListen.frame.setVisible(false);
+			menuVocabulary vcl = new menuVocabulary();
 			
 			//Vocabulary vocabulary = new Vocabulary();
 		}

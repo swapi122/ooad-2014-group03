@@ -21,7 +21,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 
-public class vocabularymenu implements ActionListener {
+public class menuVocabulary implements ActionListener {
 
 	private static JDialog frame;
 	JButton btnListenOpen;
@@ -35,7 +35,7 @@ public class vocabularymenu implements ActionListener {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					vocabularymenu window = new vocabularymenu();
+					menuVocabulary window = new menuVocabulary();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -47,7 +47,7 @@ public class vocabularymenu implements ActionListener {
 	/**
 	 * Create the application.
 	 */
-	public vocabularymenu() {
+	public menuVocabulary() {
 		initialize();
 		this.frame.setVisible(true);
 	}
@@ -151,23 +151,23 @@ public class vocabularymenu implements ActionListener {
 		if(btn==btnFillOpen)
 		{
 			System.out.println("ExerciseVocabulary --> btnfill open_Click");
-			vocabularymenu.frame.setVisible(false);
-			vclfillex vocabulary_fill = new vclfillex();
+			menuVocabulary.frame.setVisible(false);
+			ExVclFill vocabulary_fill = new ExVclFill();
 		}
 		else if(btn==btnListenOpen){
 			System.out.println("ListExerciseVocabulary --> btnlisten open_Click");
-			vocabularymenu.frame.setVisible(false);
-			vcllistenex vocabulary_listen = new vcllistenex();
+			menuVocabulary.frame.setVisible(false);
+			ExVclListen vocabulary_listen = new ExVclListen();
 		}
 		
 		else if(btn==btnPronunOpen){
 			System.out.println("ListExerciseVocabulary --> btnpronun open_Click");
-			vocabularymenu.frame.setVisible(false);
-			vclpronunciationex vocabulary_pronun = new vclpronunciationex();
+			menuVocabulary.frame.setVisible(false);
+			ExVclPronunciation vocabulary_pronun = new ExVclPronunciation();
 		}
 		else if(btn==btnBack){
 			System.out.println("ListExerciseVocabulary --> btnBack_Click");
-			vocabularymenu.frame.setVisible(false);
+			menuVocabulary.frame.setVisible(false);
 			menu home = new menu();
 		}
 	}

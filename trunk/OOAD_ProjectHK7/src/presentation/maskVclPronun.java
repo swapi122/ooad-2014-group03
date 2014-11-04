@@ -22,7 +22,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 
-public class listenmask implements ActionListener {
+public class maskVclPronun implements ActionListener {
 
 	private static JFrame frame;
 	JButton btnclose;
@@ -33,7 +33,7 @@ public class listenmask implements ActionListener {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					listenmask window = new listenmask();
+					maskVclPronun window = new maskVclPronun();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -45,7 +45,7 @@ public class listenmask implements ActionListener {
 	/**
 	 * Create the application.
 	 */
-	public listenmask() {
+	public maskVclPronun() {
 		initialize();
 		this.frame.setVisible(true);
 		}
@@ -118,7 +118,7 @@ public class listenmask implements ActionListener {
 			System.out.println("mask --> btnclose_Click");
 			//openfilelisten ope = new openfilelisten();
 			//vclfillex vocabulary_fill = new vclfillex();
-			listenmask.frame.setVisible(false);
+			maskVclPronun.frame.setVisible(false);
 			//readingmenu mnulis = new readingmenu();
 		}
 		
