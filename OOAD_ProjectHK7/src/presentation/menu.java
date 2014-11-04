@@ -21,6 +21,7 @@ import javax.swing.SwingConstants;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.SystemColor;
 
 public class menu implements ActionListener {
 	
@@ -111,6 +112,7 @@ public class menu implements ActionListener {
 		panel.add(btnVocabulary);
 		
 		btnHelp = new JButton("Help");
+		btnHelp.setBackground(SystemColor.activeCaption);
 		btnHelp.setToolTipText("help");
 		btnHelp.setIcon(new ImageIcon("Images/help.png"));
 		btnHelp.setForeground(new Color(51, 51, 153));
