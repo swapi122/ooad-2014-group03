@@ -68,6 +68,7 @@ public class menu implements ActionListener {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
+		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(204, 204, 204));
 		panel.setBounds(10, 11, 695, 418);

@@ -1,4 +1,5 @@
 package presentation;
+import readingFile.*;
 
 import java.awt.EventQueue;
 
@@ -25,12 +26,24 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.border.LineBorder;
 
+import java.awt.Choice;
+import java.awt.List;
+import java.awt.TextField;
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.swing.JTextField;
+
 public class openFileRead implements ActionListener {
 
 	private static JFrame frame;
 	JButton btnCancel;
+	TextArea textArea;
 	JButton btnOpen;
 	JButton btninputfile;
+	List menuList;
+	String s="";
 	/**
 	 * Launch the application.
 	 */
@@ -61,7 +74,7 @@ public class openFileRead implements ActionListener {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setTitle("Open file");
-		frame.setBounds(100, 100, 568, 402);
+		frame.setBounds(100, 100, 807, 402);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -75,18 +88,13 @@ public class openFileRead implements ActionListener {
 		
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(new Color(192, 192, 192)));
-		panel.setBounds(10, 31, 532, 325);
+		panel.setBounds(10, 31, 771, 325);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
-		TextArea textArea = new TextArea();
-		textArea.setEnabled(false);
-		textArea.setBounds(10, 10, 512, 260);
-		panel.add(textArea);
-		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new LineBorder(new Color(192, 192, 192)));
-		panel_1.setBounds(10, 276, 512, 44);
+		panel_1.setBounds(10, 276, 751, 44);
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 		
@@ -100,22 +108,41 @@ public class openFileRead implements ActionListener {
 		btnOpen = new JButton("Open");
 		btnOpen.setForeground(new Color(65, 105, 225));
 		btnOpen.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnOpen.setBounds(258, 5, 97, 35);
+		btnOpen.setBounds(537, 5, 97, 35);
 		btnOpen.addActionListener(this);
 		panel_1.add(btnOpen);
 		
 		btnCancel = new JButton("Cancel");
 		btnCancel.setForeground(new Color(65, 105, 225));
 		btnCancel.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnCancel.setBounds(405, 5, 97, 35);
+		btnCancel.setBounds(644, 5, 97, 35);
 		btnCancel.addActionListener(this);
 		panel_1.add(btnCancel);
+		
+		menuList = new List();
+		menuList.setMultipleSelections(true);
+		menuList.setMultipleMode(true);
+		//menuList.setMultipleSelections(false);
+		menuList.setBounds(10, 10, 128, 260);
+		panel.add(menuList);
+		
+		textArea = new TextArea();
+		textArea.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+		textArea.setBounds(160, 10, 601, 260);
+		textArea.setEditable(false);
+		panel.add(textArea);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		JButton btn = (JButton)e.getSource();
+		
+		inputFileReading inputfile = new inputFileReading();
+		readFile read = new readFile();
+		writeFile write = new writeFile();
+		
+		
 		if(btn==btnCancel)
 		{
 			System.out.println("openfile --> btncncel_Click");
@@ -123,14 +150,35 @@ public class openFileRead implements ActionListener {
 			//readingmenu read = new readingmenu();
 			
 		}
+		
 		else if(btn==btninputfile){
 			System.out.println("openfile --> btninputfile_Click");
-			//vcllistenex vocabulary_listen = new vcllistenex();
+			
+			try
+			{
+				inputfile.pickme();				
+				write.writefile(inputfile.urlname);
+				textArea.setText(read.docFile(inputfile.urlname));
+				menuList.add(inputfile.name);
+				//menuChoose.setName(inputfile.name);
+				s=inputfile.urlname;
+				
+			}
+			catch(Exception ex)
+			{
+				
+			}
 		}
 		
 		else if(btn==btnOpen){
 			System.out.println("openfile --> btnopen_Click");
-			//vclpronunciationex vocabulary_pronun = new vclpronunciationex();
+			openFileRead.frame.setVisible(false);
+			
+			menuReading reading = new menuReading();
+			try
+			{
+				reading.textArea.setText(read.docFile(s));
+			}catch(Exception ex){}
 		}
 	}
 }
