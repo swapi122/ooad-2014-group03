@@ -8,6 +8,7 @@ import java.awt.BorderLayout;
 
 import javax.swing.JDialog;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 
 import java.awt.Font;
@@ -22,12 +23,16 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
+import readingFile.inputFileReading;
+import readingFile.readFile;
+
 public class menuReading implements ActionListener {
 
 	private static JDialog frame;
 	JButton btnopenfile;
 	JButton btnFinal;
 	JButton btnHome;
+	TextArea textArea;
 
 	/**
 	 * Launch the application.
@@ -58,12 +63,12 @@ public class menuReading implements ActionListener {
 	 */
 	private void initialize() {
 		frame = new JDialog();
-		frame.setBounds(100, 100, 597, 475);
+		frame.setBounds(100, 100, 902, 475);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("READING");
-		lblNewLabel.setBounds(0, 0, 581, 31);
+		lblNewLabel.setBounds(0, 0, 876, 31);
 		lblNewLabel.setForeground(new Color(0, 0, 255));
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -71,52 +76,52 @@ public class menuReading implements ActionListener {
 		
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(new Color(192, 192, 192)));
-		panel.setBounds(10, 37, 561, 392);
+		panel.setBounds(10, 37, 866, 392);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new LineBorder(new Color(192, 192, 192)));
-		panel_1.setBounds(10, 10, 322, 371);
+		panel_1.setBounds(10, 10, 623, 371);
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 		
-		TextArea textArea = new TextArea();
-		textArea.setEnabled(false);
-		textArea.setBounds(10, 10, 302, 308);
+		textArea = new TextArea();
+		textArea.setBounds(10, 10, 603, 351);
+		textArea.setEditable(false);
 		panel_1.add(textArea);
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBackground(new Color(255, 255, 255));
 		panel_2.setBorder(new LineBorder(new Color(192, 192, 192)));
-		panel_2.setBounds(338, 10, 213, 215);
+		panel_2.setBounds(643, 10, 213, 215);
 		panel.add(panel_2);
 		
 		JLabel lblNewLabel_1 = new JLabel("00:00:00");
 		lblNewLabel_1.setForeground(new Color(0, 0, 255));
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setBounds(342, 236, 209, 39);
+		lblNewLabel_1.setBounds(643, 236, 209, 39);
 		panel.add(lblNewLabel_1);
 		
 		btnopenfile = new JButton("Open file");
 		btnopenfile.setForeground(new Color(0, 0, 255));
 		btnopenfile.setFont(new Font("Tw Cen MT", Font.PLAIN, 14));
-		btnopenfile.setBounds(342, 286, 94, 52);
+		btnopenfile.setBounds(643, 286, 94, 52);
 		btnopenfile.addActionListener(this);
 		panel.add(btnopenfile);
 		
 		btnFinal = new JButton("Final");
 		btnFinal.setForeground(Color.BLUE);
 		btnFinal.setFont(new Font("Tw Cen MT", Font.PLAIN, 17));
-		btnFinal.setBounds(462, 286, 89, 52);
+		btnFinal.setBounds(767, 286, 89, 50);
 		btnFinal.addActionListener(this);
 		panel.add(btnFinal);
 		
 		btnHome = new JButton("Home");
 		btnHome.setForeground(Color.BLUE);
 		btnHome.setFont(new Font("Tw Cen MT", Font.PLAIN, 14));
-		btnHome.setBounds(342, 347, 209, 34);
+		btnHome.setBounds(643, 349, 213, 34);
 		btnHome.addActionListener(this);
 		panel.add(btnHome);
 	}
@@ -125,9 +130,19 @@ public class menuReading implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		JButton btn = (JButton)e.getSource();
+		inputFileReading inputfile = new inputFileReading();
+		readFile read = new readFile();
+		
+		
 		if(btn==btnopenfile){
 			System.out.println("Reading --> btnOpenfile_Click");
 			openFileRead open = new openFileRead();
+			try
+			{
+				open.menuList.add(read.docFile("listFileRead.txt"),1);
+				
+			}
+			catch(Exception ex){JOptionPane.showMessageDialog(null,"ko co san file read nao");}
 		}
 		else if(btn==btnFinal){
 			System.out.println("Listening --> btnFinal_Click");
